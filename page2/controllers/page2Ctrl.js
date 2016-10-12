@@ -1,1 +1,0 @@
-demo.controller('page2Ctrl', ["$scope", function ($scope) {}])
