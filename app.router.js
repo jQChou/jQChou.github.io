@@ -1,8 +1,11 @@
 demo.config(["$stateProvider", "$locationProvider", "$urlRouterProvider", function ($stateProvider, $locationProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/pageIndex");
+    $urlRouterProvider.when("/", "/pageIndex");
     $stateProvider.state('pageIndex', {
             url: '/pageIndex',
-            templateUrl: 'common/templete/pageIndex.html?rev=4a3e0be9ff'
+            templateUrl: 'common/templete/pageIndex.html?rev=4a3e0be9ff',
+            controller: function () {
+                console.log(1);
+            }
         })
         .state('pageIndex.page1', {
             url: '/page1',
@@ -13,4 +16,5 @@ demo.config(["$stateProvider", "$locationProvider", "$urlRouterProvider", functi
             templateUrl: 'page2/page2.html?rev=b28fa609a0',
             controller: 'page2Ctrl'
         });
+    $locationProvider.html5Mode(true);
 }])
